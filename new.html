@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahjin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #1B1B1B !important;
+            color: #E0E0E0 !important;
+            font-family: 'Times New Roman', Times, serif, sans-serif !important;
+            display: flex !important;
+            flex-direction: column !important;
+            min-height: 100vh !important;
+            margin: 0 !important;
+        }
+
+        .hero-section {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            padding: 100px 0 !important;
+            background: linear-gradient(to bottom, #000000, #1B1B1B) !important;
+            background-size: cover;
+            min-height: 100vh !important;
+            color: #E0E0E0 !important;
+        }
+
+        .hero-image {
+            flex: 1 !important;
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+        }
+
+        .hero-image img {
+            max-width: 100% !important;
+            max-width: 450px !important;
+            height: auto !important;
+            border-radius: 0px !important;
+        }
+
+        .hero-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 20px;
+            text-align: left;
+        }
+
+        .hero-heading {
+            font-size: 50px;
+            margin-bottom: 20px;
+            color: #E0E0E0;
+            text-align: center;
+        }
+
+        .hero-tagline {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .btn-custom {
+            background-color: #2F2F2F;
+            color: #E0E0E0;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            border-radius: 4px;
+            margin-top: 20px;
+            transition: background-color 0.3s, transform 0.3s;
+            width: fit-content;
+            align-self: center;
+        }
+
+        .btn-custom {
+            background-color: #2F2F2F !important;
+            color: #E0E0E0 !important;
+            border: none !important;
+            padding: 6px 12px !important;
+            font-size: 0.7rem !important;
+            border-radius: 4px !important;
+            margin-top: 20px !important;
+            transition: background-color 0.3s, transform 0.3s !important;
+            width: 250px !important;
+            align-items: right;
+        }
+
+        .btn-custom:hover {
+            background-color: #262626 !important;
+            transform: scale(1.02) !important;
+        }
+
+        .features-section .about-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .features-section .about-text {
+            flex: 1;
+            padding-right: 20px;
+            margin-right: 20px;
+        }
+
+        .features-section .about-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .features-section .about-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .features-section h2 {
+            margin-bottom: 20px;
+        }
+
+        .features-section h5 {
+            line-height: 1.5;
+        }
+
+        .features-section .about-text {
+            flex: 1;
+            padding-right: 10px;
+            padding-left: 10px;
+        }
+
+        .features-section .about-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .features-section .about-image img {
+            max-width: 60%;
+            height: auto;
+        }
+
+        .features-section {
+            padding: 60px 0 !important;
+        }
+
+        #about {
+            padding: 60px 0 !important;
+        }
+
+        #about h2 {
+            margin-bottom: 30px !important;
+        }
+
+        #about .about-text {
+            margin-top: 20px !important;
+        }
+
+        #about .about-image {
+            margin-top: 20px !important;
+        }
+
+        #services {
+            padding: 60px 0 !important;
+        }
+
+        .features-section h2,
+        #services h2 {
+            text-align: center !important;
+            margin: 0 auto !important;
+            width: fit-content !important;
+        }
+
+        .features-section p,
+        #services p {
+            text-align: center !important;
+            margin: 0 auto !important;
+            width: fit-content !important;
+        }
+
+
+        .testimonial {
+            background-color: #262626 !important;
+            padding: 20px !important;
+            border-radius: 10px !important;
+            text-align: center !important;
+            color: #E0E0E0 !important;
+            margin-bottom: 30px !important;
+        }
+
+        .testimonial-img {
+            width: 100% !important;
+            max-width: 160px !important;
+            max-height: 170px !important;
+            height: auto !important;
+            border-radius: 80% !important;
+            object-fit: cover !important;
+            margin-bottom: 15px !important;
+        }
+
+        .testimonial h3 {
+            font-size: 1.5rem !important;
+            margin-bottom: 15px !important;
+            color: #E0E0E0 !important;
+        }
+
+        .testimonial p {
+            font-size: 1rem !important;
+            color: #B8B8B8 !important;
+        }
+
+        #testimonials {
+            background: linear-gradient(to bottom, #1B1B1B, #000000) !important;
+            padding: 60px 0 !important;
+            text-align: center !important;
+        }
+
+        #testimonials h2 {
+            margin-bottom: 40px !important;
+            color: #E0E0E0 !important;
+        }
+
+        .footer {
+            background-color: #000000 !important;
+            padding: 0px 0 !important;
+            text-align: center !important;
+            color: #ffffff !important;
+            flex-shrink: 0 !important;
+            border-top: 3px solid #000000 !important;
+            border-bottom: 3px solid #000000 !important;
+            font-size: 15px;
+        }
+
+        .footer a {
+            color: #ffffff !important;
+            text-decoration: none !important;
+            margin: 0 15px !important;
+        }
+
+        .footer p,
+        .footer a {
+            display: inline-block !important;
+            margin: 0 !important;
+            padding: 0 15px !important;
+            line-height: 2 !important;
+        }
+
+        .footer-container {
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            flex-wrap: wrap !important;
+        }
+
+        nav.navbar {
+            background-color: #000000 !important;
+            padding: 0px 10px !important;
+        }
+
+        nav.navbar .navbar-brand {
+            display: flex !important;
+            align-items: center !important;
+            font-size: 30px !important;
+        }
+
+        nav.navbar .navbar-brand img {
+            width: 55px !important;
+            height: auto !important;
+            margin-right: 12px !important;
+        }
+
+        nav.navbar .navbar-nav .nav-link {
+            color: #ffffff !important;
+            transition: color 0.3s, text-shadow 0.3s, transform 0.3s !important;
+            display: inline-block !important;
+        }
+
+        nav.navbar .navbar-nav .nav-link:hover {
+            color: #e0e0e0 !important;
+            text-shadow: 0 0 5px #ffffff !important;
+            transform: scale(1.1) !important;
+        }
+
+        .testimonial {
+            background-color: #262626 !important;
+            padding: 20px !important;
+            border-radius: 10px !important;
+            text-align: center !important;
+            color: #E0E0E0 !important;
+            margin-bottom: 30px !important;
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial:hover {
+            transform: scale(1.05);
+        }
+
+        .testimonial-img {
+            width: 100% !important;
+            max-width: 160px !important;
+            max-height: 170px !important;
+            height: auto !important;
+            border-radius: 80% !important;
+            object-fit: cover !important;
+            margin-bottom: 15px !important;
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial:hover .testimonial-img {
+            transform: scale(1.1);
+        }
+
+        .service-card {
+            background-color: #262626 !important;
+            color: #E0E0E0 !important;
+            border-radius: 10px !important;
+            padding: 20px !important;
+            text-align: center !important;
+            transition: transform 0.3s ease !important;
+            margin-bottom: 30px !important;
+            height: 400px;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+        }
+
+        .service-card {
+            background-color: #262626 !important;
+            color: #E0E0E0 !important;
+            border-radius: 10px !important;
+            padding: 20px !important;
+            text-align: center !important;
+            transition: transform 0.3s ease !important;
+            margin-bottom: 30px !important;
+            height: 440px;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .service-card h4 {
+            margin: 15px 0;
+        }
+
+        .service-card p {
+            margin: 0;
+        }
+
+        .container {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .service-card:hover {
+            transform: scale(1.05) !important;
+        }
+
+        #services {
+            padding: 50px 0 !important;
+        }
+
+        #services h2 {
+            margin-bottom: 20px !important;
+        }
+
+        #services p {
+            margin-bottom: 40px !important;
+        }
+
+        .service-card {
+            margin-bottom: 40px !important;
+        }
+    </style>
+</head>
+
+</style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="LogoAhjin.png" alt="Logo">
+                Ahjin
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Testimonials</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home" class="hero-section">
+        <div class="hero-image">
+            <img src="Espada.png" alt="Hero Image">
+        </div>
+        <div class="hero-content">
+            <h3 class="hero-heading">Yokoso Watashi no Soul society</h3>
+            <p class="hero-tagline">Ascend Beyond Limits and Command the Battlefield
+                with Tactical Mastery.</p>
+            <a href="#about" class="btn btn-custom">Learn More</a>
+        </div>
+    </header>
+
+    <section id="about" class="features-section">
+        <div class="container">
+            <h2>About Us</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="p-4 rounded shadow" style="background-color: #262626; color: #ffffff;">
+                        <h5>We’re passionate about helping players improve their skills and reach their goals in
+                            Valorant.
+                            Our team of experienced coaches provides personalized guidance to enhance your gameplay.
+                            Whether you're
+                            just starting out or looking to climb the ranks, we offer tailored strategies, one-on-one
+                            sessions,
+                            and valuable insights to help you succeed. Join us and take your game to the next level with
+                            expert
+                            coaching and dedicated support.</h5>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="image (1).png" alt="Coaching Image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="features-section">
+        <div class="container">
+            <h2>Services</h2>
+            <p>Explore our range of coaching services designed to elevate your Valorant skills.</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <img src="ValorantCoaching.png" alt="Service 1">
+                        <h4>Personalized Coaching</h4>
+                        <p>Aim, position, and game sense will all be improved with specially designed sessions that
+                            concentrate on your strengths and shortcomings and include in-depth gaming analysis and
+                            useful feedback.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <img src="TeamStrat.jpg" alt="Service 2">
+                        <h4>Team Strategy</h4>
+                        <p>Create and hone tactics to enhance team collaboration, coordination, and communication.
+                            includes team composition optimization and practice sessions.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <img src="LiveGameAnalysis.jpg" alt="Service 3">
+                        <h4>Live Game Analysis</h4>
+                        <p>Real-time coaching during games and in the aftermath to assess errors and accomplishments,
+                            offering prompt direction and useful advice derived from on-the-spot observations.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <img src="TrainingPrograms.jpg" alt="Service 4">
+                        <h4>Training Programs</h4>
+                        <p>Routines with defined objectives to monitor improvement on a daily and weekly basis,
+                            incorporating tailored exercises targeted at improving particular gaming mechanics.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <img src="CompetetivePlay.png" alt="Service 5">
+                        <h4>Competitive Play Prep</h4>
+                        <p>Competitive match and tournament strategy, including advice on physical and mental
+                            preparation and an examination of the tactics used by the opposition.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <img src="Game Workshop Mechanics.jpg" alt="Service 6">
+                        <h4>Game Mechanics Workshops</h4>
+                        <p>In-depth lessons on game mechanics, weapon handling, movement, and using abilities, with
+                            practical practice and expert advice.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <div class="container">
+            <h2>Testimonials</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="testimonial">
+                        <img src="Julioswo.jpg" class="testimonial-img" alt="Person 1">
+                        <h3>Julwo</h3>
+                        <p>I quickly advanced from being an average player to climbing the ranks thanks to this coaching
+                            program. The strategies and tips provided were exceptional, and the personalized coaching
+                            and practice sessions proved invaluable. I gained a deep understanding of game mechanics and
+                            team strategies, which significantly boosted my performance in matches. I highly recommend
+                            this program for anyone.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial">
+                        <img src="royto.jpg" class="testimonial-img" alt="Person 2">
+                        <h3>oanroy</h3>
+                        <p>After participating in this coaching program, I’ve seen a significant improvement in my
+                            gameplay. I’m now playing with a newfound understanding of the mechanics and strategies, and
+                            my performance has noticeably changed for the better. I’ve gained valuable insights into
+                            what to do and what to avoid, which has made a huge difference. I highly recommend this
+                            program to anyone looking to enhance their skills.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial">
+                        <img src="lance.png" class="testimonial-img" alt="Person 3">
+                        <h3>imbastar</h3>
+                        <p>I went from feeling stuck at my current rank to rapidly improving and climbing the ladder.
+                            The coach's in-depth analysis and tailored advice on my gameplay helped me understand key
+                            strategies and refine my skills. The one-on-one sessions were incredibly insightful and made
+                            a huge impact on my overall performance. If you're serious about leveling up your game, I
+                            highly recommend giving this program a try.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <p>&copy; 2024 1nonly Romel. All rights reserved.</p>
+            <div>
+                <a href="#">Privacy Policy | Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
